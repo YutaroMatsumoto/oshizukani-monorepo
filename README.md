@@ -35,8 +35,8 @@ https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e?utm_source=Qiita%E3%83%8B
   - B2C で認証する場合、家族の紐付けはどのように行うのか？
   - たとえば、メールでリンクを送るとか？
   - 家族情報をどこかで保持しておいて、認証に成功したら家族情報も DB に登録する？
-
-## Azure AD 認証
+- **案 2 自前で認証機能を用意（こちらを採用）** <br>
+  - Notion、カオナビのような認証機能を想定
 
 参考資料
 
@@ -53,5 +53,3 @@ https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e?utm_source=Qiita%E3%83%8B
 - https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/blob/main/3-Authorization-II/2-call-api-b2c/SPA/src/authConfig.js
 
 ## 検討
-
-- azurite
