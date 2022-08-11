@@ -72,7 +72,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
-# 環境構築
+# 環境構築（要改善）
 
 ```
 # ts-nodeをグローバルインストールしておいてください（グローバルインストールで良いのか確認）
@@ -84,6 +84,19 @@ docker comopse up -d
 # apiコンテナに入る
 docker exec -it oshizukani-api sh
 
+# パッケージのインストール
+yarn install
+
+# マイグレーションの実行
+yarn run:migration
+
+# サーバー起動
+yarn start
+```
+
+# DB 操作
+
+```
 # dbコンテナに入る
 docker exec -it be_db_1 sh
 or
