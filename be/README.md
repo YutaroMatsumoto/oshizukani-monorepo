@@ -81,13 +81,13 @@ docker comopse up -d
 # apiコンテナに入る
 docker exec -it oshizukani-api sh
 
-# パッケージのインストール
+# パッケージのインストール（コンテナの中で行う）
 yarn install
 
-# マイグレーションの実行
-yarn run:migration
+# マイグレーションの実行（コンテナの外で行う）
+yarn migration:run
 
-# サーバー起動
+# サーバー起動（コンテナの中で行う）
 yarn start
 ```
 
