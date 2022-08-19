@@ -75,9 +75,6 @@ Nest is [MIT licensed](LICENSE).
 # 環境構築（要改善）
 
 ```
-# ts-nodeをグローバルインストールしておいてください（グローバルインストールで良いのか確認）
-yarn global add ts-node
-
 # コンテナ立ち上げ
 docker comopse up -d
 
