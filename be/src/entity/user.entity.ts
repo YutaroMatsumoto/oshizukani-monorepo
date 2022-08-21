@@ -39,7 +39,7 @@ export class User {
   /** 名 */
   @Column()
   @MaxLength(30)
-  first_name: string
+  firstName: string
 
   /** 性別 */
   /** nullは許可せず、回答なしの場合は'0'とする */
