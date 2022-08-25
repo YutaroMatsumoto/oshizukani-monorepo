@@ -13,6 +13,8 @@ const source = new DataSource({
   migrations: ['src/migration/**/*.{js,ts}'],
   synchronize: true, // TODO: 本番環境では推奨されていないため、環境によって分ける
   namingStrategy: new CustomNamingStrategy(),
+  logging: true,
+  logger: 'file',
 })
 
 // TODO: dbの情報はenvファイルから取ってくる。以下の設定にしたいがなぜかうまくいかない。envファイル読み込めてなさそう？
