@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { TestModule } from 'src/module/test.module'
-// import { AuthModule } from 'src/module/auth.module'
+import { AuthModule } from 'src/module/auth.module'
 import { UsersModule } from 'src/module/users.module'
 import { CustomNamingStrategy } from 'src/config/db/customNamingStrategy'
 
@@ -31,7 +31,7 @@ import { CustomNamingStrategy } from 'src/config/db/customNamingStrategy'
     // ------------------ //
     TestModule,
     UsersModule,
-    // AuthModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
