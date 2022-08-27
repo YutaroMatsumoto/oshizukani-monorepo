@@ -22,14 +22,7 @@ export class TestService {
   }
 
   async createTestAccount(user: User) {
-    console.log('createTestAccount(TestService)動いている')
     const testAccount = this.userRepository.create(user)
-    console.log('userを表示')
-    console.log(user)
-    console.log('userを表示')
-    console.log('testAccountを表示')
-    console.log(testAccount)
-    console.log('testAccountを表示')
 
     return this.userRepository.save(testAccount)
   }
