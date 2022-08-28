@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
 import { User } from 'src/entity/user.entity'
+import { UsersService } from 'src/service/users.service'
 
 /**
  * NOTE:
@@ -13,7 +14,8 @@ import { User } from 'src/entity/user.entity'
 export class TestService {
   constructor(
     @InjectRepository(User)
-    private readonly userRepository: Repository<User>
+    private readonly userRepository: Repository<User>,
+    private usersService: UsersService
   ) {}
   getHello(): string {
     // console.log('process.env：', process.env)
@@ -24,6 +26,6 @@ export class TestService {
   async createTestAccount(user: User) {
     const testAccount = this.userRepository.create(user)
 
-    return this.userRepository.save(testAccount)
+    return this.usersService.signUp(testAccount)
   }
 }

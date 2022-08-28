@@ -1,10 +1,14 @@
-import { Controller, Get } from '@nestjs/common'
+import { ConflictException, Controller, Get } from '@nestjs/common'
 import { TestService } from 'src/service/test.service'
 import { User } from 'src/entity/user.entity'
+import { UsersService } from 'src/service/users.service'
 
 @Controller()
 export class TestController {
-  constructor(private readonly testService: TestService) {}
+  constructor(
+    private readonly testService: TestService,
+    private usersService: UsersService
+  ) {}
 
   @Get()
   getHello(): string {
@@ -15,9 +19,8 @@ export class TestController {
    * @description テストアカウント作成
    */
   @Get('create-test-account')
-  createTestAccount() {
+  async createTestAccount() {
     console.log('createTestAccount(TestController)動いている')
-
     const user = new User()
     user.password = 'Test1234'
     user.email = 'test@example.com'
@@ -25,6 +28,11 @@ export class TestController {
     user.lastName = 'Yamada'
     user.gender = '1'
     user.userStatus = '1'
+
+    const isExistEmail = await this.usersService.findOne(user.email)
+    if (isExistEmail) {
+      throw new ConflictException()
+    }
 
     this.testService.createTestAccount(user)
   }
