@@ -58,11 +58,4 @@ export class AuthService {
       ? console.log('アカウントがあるので、次の操作には進ませない')
       : console.log('アカウントがないので、メールを送る')
   }
-
-  async signUp(user: User) {
-    const userData = await this.usersService.findOne(user.email)
-    console.log(userData)
-
-    // userData ? console.log('アカウントがある') : this.usersService.create(user)
-  }
 }
