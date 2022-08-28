@@ -5,6 +5,8 @@ import { TestModule } from 'src/module/test.module'
 import { AuthModule } from 'src/module/auth.module'
 import { UsersModule } from 'src/module/users.module'
 import { CustomNamingStrategy } from 'src/config/db/customNamingStrategy'
+import { APP_FILTER } from '@nestjs/core'
+import { HttpExceptionFilter } from './config/http/http-exeption.filter'
 
 // TODO: ormconfigの内容を参照できるようにしたい
 
@@ -33,5 +35,6 @@ import { CustomNamingStrategy } from 'src/config/db/customNamingStrategy'
     UsersModule,
     AuthModule,
   ],
+  providers: [{ provide: APP_FILTER, useClass: HttpExceptionFilter }],
 })
 export class AppModule {}
