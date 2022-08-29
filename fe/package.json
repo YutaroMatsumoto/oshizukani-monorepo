@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@azure/msal-browser": "^2.27.0",
-    "@azure/msal-react": "^1.4.3",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"

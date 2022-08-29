@@ -2,23 +2,6 @@
 # yarn lockfile v1
 
 
-"@azure/msal-browser@^2.27.0":
-  version "2.27.0"
-  resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-2.27.0.tgz#3db38db6bc2bae44485025ba9bb99c43ed7f4302"
-  integrity sha512-PyATq2WvK+x32waRqqikym8wvn939iO9UhpFqhLwitNrfLa3PHUgJuuI9oLSQOS3/UzjYb8aqN+XzchU3n/ZuQ==
-  dependencies:
-    "@azure/msal-common" "^7.1.0"
-
-"@azure/msal-common@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-7.1.0.tgz#b77dbf9ae581f1ed254f81d56422e3cdd6664b32"
-  integrity sha512-WyfqE5mY/rggjqvq0Q5DxLnA33KSb0vfsUjxa95rycFknI03L5GPYI4HTU9D+g0PL5TtsQGnV3xzAGq9BFCVJQ==
-
-"@azure/msal-react@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@azure/msal-react/-/msal-react-1.4.3.tgz#46635200e719605ac2484bdabe1234797c981850"
-  integrity sha512-xAdAXDn7ppy+dZCcpqoqJq/wJOB9MxPDhB2p50rkiIQfxCzxCt7rS7gskrOSlq2qYFUebJlOE0RkAk3DO6Uq7g==
-
 "@babel/runtime-corejs3@^7.10.2":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.18.6.tgz#6f02c5536911f4b445946a2179554b95c8838635"
