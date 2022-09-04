@@ -1,6 +1,6 @@
 import 'twin.macro'
 import { useContext, useCallback } from 'react'
-import { Button } from 'src/components/atoms/Button'
+import { Button } from 'src/components/atoms/Buttons/Buttons'
 // import { Tab } from 'src/components/organisms/Tab';
 // import { Modal } from 'src/components/organisms/modal/Modal'
 // import {
@@ -28,7 +28,11 @@ export const Header = () => {
       </div> */}
       <div tw="ml-auto">
         <div tw="flex items-center cursor-pointer">
-          <Button title="ログイン" onClick={() => console.log('Login')} />
+          <Button
+            type="green"
+            title="ログイン"
+            onClick={() => console.log('Login')}
+          />
 
           {/* {auth ? (
             <RiUserSettingsFill
