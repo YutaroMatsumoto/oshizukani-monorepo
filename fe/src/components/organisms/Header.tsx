@@ -1,6 +1,6 @@
 import 'twin.macro'
 import { useContext, useCallback } from 'react'
-import { Button } from 'src/components/atoms/Buttons/Buttons'
+import { Button } from 'src/components/atoms/button/Buttons'
 // import { Tab } from 'src/components/organisms/Tab';
 // import { Modal } from 'src/components/organisms/modal/Modal'
 // import {
