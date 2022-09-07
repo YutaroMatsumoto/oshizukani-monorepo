@@ -11,7 +11,8 @@ export const BaseTemplate = ({ children }: React.PropsWithChildren<Props>) => {
   return (
     <div tw="h-full bg-gray10">
       <Header />
-      <div tw="pt-16 h-full flex justify-center items-center">{children}</div>
+      {/* <div tw="pt-16 h-full flex justify-center items-center">{children}</div> */}
+      <div tw="h-full px-4">{children}</div>
     </div>
   )
 }
