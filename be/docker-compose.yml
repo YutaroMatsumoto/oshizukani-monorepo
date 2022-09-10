@@ -1,7 +1,7 @@
 version: '3.9'
 volumes:
-  nestjs-node-modules:
-  # nestjs-dist:
+  oshizukani-postgres-data:
+  oshizukani-nestjs-node-modules:
 
 services:
   db:
@@ -14,6 +14,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --locale=C'
       POSTGRES_DB: oshizukani-dev
+    volumes:
+      - oshizukani-postgres-data:/var/lib/postgresql/data
+
   api:
     container_name: oshizukani-api
     build: ./docker/api
@@ -22,6 +25,6 @@ services:
       - '8000:8000'
     volumes:
       - ./:/app
-      - nestjs-node-modules:/app/node_modules
+      - oshizukani-nestjs-node-modules:/app/node_modules
       # - nestjs-dist:/app/dist
   # command: sh -c "yarn install && yarn start"
