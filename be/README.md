@@ -76,7 +76,7 @@ Nest is [MIT licensed](LICENSE).
 
 ```
 # コンテナ立ち上げ
-docker comopse up -d
+docker compose up -d
 
 # apiコンテナに入る
 docker exec -it oshizukani-api sh
@@ -95,9 +95,9 @@ yarn start
 
 ```
 # dbコンテナに入る
-docker exec -it be_db_1 sh
+docker exec -it be-db-1 sh
 or
-docker exec -it be_db_1 bash
+docker exec -it be-db-1 bash
 
 # ユーザーを指定してdbに接続
 psql -U postgres
