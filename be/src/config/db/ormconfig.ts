@@ -34,4 +34,22 @@ const source = new DataSource({
 //   namingStrategy: new CustomNamingStrategy(),
 // })
 
+// TODO: dataSourceOptionsを定義して、app.module.tsでも使えるようにする
+// export const dataSourceOptions: DataSourceOptions = {
+//   type: 'postgres',
+//   host: '127.0.0.1',
+//   port: 5432,
+//   username: 'postgres',
+//   password: 'postgres',
+//   database: 'oshizukani-dev',
+//   entities: ['src/entity/*.{js,ts}'],
+//   migrations: ['src/migration/**/*.{js,ts}'],
+//   synchronize: true, // TODO: 本番環境では推奨されていないため、環境によって分ける
+//   namingStrategy: new CustomNamingStrategy(),
+//   logging: true,
+//   logger: 'file',
+// }
+
+// const source = new DataSource(dataSourceOptions)
+
 export default source

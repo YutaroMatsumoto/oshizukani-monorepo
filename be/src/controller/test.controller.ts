@@ -2,6 +2,7 @@ import { ConflictException, Controller, Get } from '@nestjs/common'
 import { TestService } from 'src/service/test.service'
 import { User } from 'src/entity/user.entity'
 import { UsersService } from 'src/service/users.service'
+import { UserStatus } from '../entity/types/UserTableTypes'
 
 @Controller()
 export class TestController {
@@ -26,8 +27,7 @@ export class TestController {
     user.email = 'test@example.com'
     user.firstName = 'Taro'
     user.lastName = 'Yamada'
-    user.gender = '1'
-    user.userStatus = '1'
+    user.userStatus = UserStatus.REGISTERED
 
     const isExistEmail = await this.usersService.findOne(user.email)
     if (isExistEmail) {

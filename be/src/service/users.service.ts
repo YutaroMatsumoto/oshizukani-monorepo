@@ -16,6 +16,11 @@ export class UsersService {
     return this.userRepository.findOne({ where: { email } })
   }
 
+  // idが一致するユーザーを返す
+  findOneById(id: User['id']): Promise<User | undefined> {
+    return this.userRepository.findOne({ where: { id } })
+  }
+
   async signUp(user: User) {
     const isExistEmail = await this.findOne(user.email)
 

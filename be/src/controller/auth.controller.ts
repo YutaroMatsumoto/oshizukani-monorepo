@@ -13,7 +13,7 @@ export class AuthController {
     const user = req.user
 
     // JwtToken を返す
-    return this.authService.login(req.user)
+    // return this.authService.login(req.user)
   }
 
   /**

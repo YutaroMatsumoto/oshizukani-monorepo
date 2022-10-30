@@ -5,7 +5,6 @@ import { PassportStrategy } from '@nestjs/passport'
 import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { AuthService, PasswordOmitUser } from 'src/service/auth.service'
 import { User } from 'src/entity/user.entity'
-import * as bcrypt from 'bcrypt'
 
 /**
  * @description emailとpasswordを使った認証処理を行うクラス
@@ -21,10 +20,7 @@ export class LocalStrategy extends PassportStrategy(BaseLocalStrategy) {
   }
 
   // passport-localは、デフォルトで email と password をパラメーターで受け取る
-  async validate(
-    email: User['email'],
-    pass: User['password']
-  ): Promise<PasswordOmitUser> {
+  async validate(email: User['email'], pass: User['password']): Promise<User> {
     // 認証して結果を受け取る
     const user = await this.authService.validateUser(email, pass)
 

@@ -11,6 +11,6 @@ declare module 'react' {
   // The css prop
   interface HTMLAttributes<T> extends DOMAttributes<T> {
     css?: CSSProp
-    tw?: string
+    // tw?: string
   }
 }

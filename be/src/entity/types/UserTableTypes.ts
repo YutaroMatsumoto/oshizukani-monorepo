@@ -1,11 +1,16 @@
-export type UserStatus =
-  | '0' // '0': 非活性
-  | '1' // '1': アカウントはあるが、ユーザー情報登録が完了していない
-  | '2' // '2': 活性
+import { registerEnumType } from '@nestjs/graphql'
+export enum UserStatus {
+  INACTIVE = '0', // '0': 非活性
+  NOT_COMOLETED = '1', // '1': アカウントはあるが、ユーザー情報登録が完了していない
+  REGISTERED = '2', // '2': 活性
+}
 
-// 性別の項目を設ける理由：将来的に組織内の性別による統計データをとる可能性もあるため
-export type Gender =
-  | '0' // '0': 無回答
-  | '1' // '1': 男性
-  | '2' // '2': 女性
-  | '9' // '9': その他
+registerEnumType(UserStatus, { name: 'UserStatus' })
+
+// NOTE: 性別は不要のため、一旦コメントアウト
+// export enum Gender {
+//   NO_ANSWER = '0', /// 無回答
+//   MALE = '1',
+//   FEMALE = '2',
+//   OTHER = '9', // その他
+// }

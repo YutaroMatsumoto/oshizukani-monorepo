@@ -7,6 +7,7 @@ type Props = {
 }
 
 export const TextInput = ({ value, className, onChange }: Props) => {
+  // console.log('value：', value)
   return (
     <input
       tw="w-full border-solid border border-gray30 rounded-lg px-2 py-1 focus:outline-none focus:border focus:border-green40"

@@ -7,11 +7,20 @@ import { UsersModule } from 'src/module/users.module'
 import { CustomNamingStrategy } from 'src/config/db/customNamingStrategy'
 import { APP_FILTER } from '@nestjs/core'
 import { HttpExceptionFilter } from './config/http/http-exeption.filter'
+import { GraphQLModule } from '@nestjs/graphql'
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { join } from 'path/posix'
 
 // TODO: ormconfigの内容を参照できるようにしたい
 
 @Module({
   imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      // debug: false,
+      // playground: false,
+    }),
     ConfigModule.forRoot({
       envFilePath: [`.env.${process.env.NODE_ENV}`],
       isGlobal: true,
@@ -26,7 +35,8 @@ import { HttpExceptionFilter } from './config/http/http-exeption.filter'
       database: process.env.DATABASE_NAME,
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
-      entities: ['dist/entity/*.entity.{js,ts}'], // NOTE: なぜかsrcではなくdistにするとうまくいった
+      entities: ['src/entity/*.entity.{js,ts}'], // NOTE: なぜかsrcではなくdistにするとうまくいった
+      // entities: ['dist/src/entity/*.entity.{js,ts}'], // NOTE: なぜかsrcではなくdistにするとうまくいった
       synchronize: process.env.NODE_ENV === 'development',
       namingStrategy: new CustomNamingStrategy(),
     }),

@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  email: String!
+  lastName: String!
+  firstName: String!
+  password: String!
+  userStatus: UserStatus!
+}
+
+enum UserStatus {
+  INACTIVE
+  NOT_COMOLETED
+  REGISTERED
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
+type Query {
+  getUser(userid: ID!): User!
+}
+
+type Mutation {
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+}
